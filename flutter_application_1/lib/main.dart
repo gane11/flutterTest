@@ -1,77 +1,77 @@
-import 'package:flutter/material.dart';
-import 'package:qr_code_scanner/qr_code_scanner.dart';
-import 'dart:developer';
-import 'dart:io';
+// import 'package:flutter/material.dart';
+// import 'package:qr_code_scanner/qr_code_scanner.dart';
+// import 'dart:developer';
+// import 'dart:io';
+// import 'package:flutter/foundation.dart' show describeEnum;
 
-void main() {
-  runApp(const MyApp());
-}
+// void main() {
+//   runApp(const MyApp());
+// }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
 
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Gane',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
-      home: const MyHomePage(title: 'Home Page'),
-    );
-  }
-}
+//   // This widget is the root of your application.
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Gane',
+//       theme: ThemeData(
+//         primarySwatch: Colors.green,
+//       ),
+//       home: const MyHomePage(title: 'Home Page'),
+//     );
+//   }
+// }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+// class MyHomePage extends StatefulWidget {
+//   const MyHomePage({super.key, required this.title});
 
-  final String title;
+//   final String title;
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
+//   @override
+//   State<MyHomePage> createState() => _MyHomePageState();
+// }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+// class _MyHomePageState extends State<MyHomePage> {
+//   int _counter = 0;
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+//   void _incrementCounter() {
+//     setState(() {
+//       _counter++;
+//     });
+//   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'sa ima:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add_a_photo_outlined),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text(widget.title),
+//       ),
+//       body: Center(
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: <Widget>[
+//             const Text(
+//               'sa ima:',
+//             ),
+//             Text(
+//               '$_counter',
+//               style: Theme.of(context).textTheme.headline4,
+//             ),
+//           ],
+//         ),
+//       ),
+//       floatingActionButton: FloatingActionButton(
+//         onPressed: _incrementCounter,
+//         tooltip: 'Increment',
+//         child: const Icon(Icons.add_a_photo_outlined),
+//       ), // This trailing comma makes auto-formatting nicer for build methods.
+//     );
+//   }
+// }
 
-
-///QR Code
+// ///QR Code
 // void main() => runApp(const MaterialApp(home: MyHome()));
 
 // class MyHome extends StatelessWidget {
@@ -257,3 +257,151 @@ class _MyHomePageState extends State<MyHomePage> {
 //     super.dispose();
 //   }
 // }
+
+////LEARNING /////
+
+import 'package:flutter/material.dart';
+
+void main(List<String> args) {
+  runApp(MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int count = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.purple,
+          title: const Text('GANE'),
+        ),
+        // body: Center(
+        //   child: Container(
+        //     child: const Text('HIIIII'),
+        //     decoration: BoxDecoration(
+        //       borderRadius: BorderRadius.circular(10.0),
+        //       color: Colors.green,
+        //     ),
+        //     height: 50,
+        //     width: 50,
+        //   ),
+        // )
+
+        // body: Row(
+        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        //   children: const [
+        //   Icon(Icons.back_hand),
+        //   Icon(Icons.leaderboard),
+        //   Icon(Icons.backpack)
+        // ],)
+
+        // body: Stack(
+        //   children: [
+        //     Container(
+        //       color: Colors.red,
+        //       width: 100,
+        //       height: 100,
+        //     ),
+        //     Icon(Icons.verified)
+        //   ],
+        // ),
+
+        // body: ListView.builder(
+        //   scrollDirection: Axis.vertical,
+        //   addAutomaticKeepAlives: false,
+        //   itemBuilder: (_, index) {
+        //     return Container(
+        //       color: Colors.blue,
+        //       width: 100,
+        //       height: 100,
+        //     );
+        //   },
+        // ),  /// for rendering list dynamicaly
+
+        body: ListView(
+          scrollDirection: Axis.vertical,
+          addAutomaticKeepAlives: false,
+          children: [
+            Container(
+              color: Colors.blue,
+              width: 100,
+              height: 500,
+            ),
+            Container(
+              color: Colors.green,
+              width: 100,
+              height: 500,
+              child: Text(
+                '$count',
+              ),
+            ),
+            Container(
+              color: Colors.red,
+              width: 100,
+              height: 500,
+            ),
+            Container(
+              color: Colors.yellow,
+              width: 100,
+              height: 500,
+            ),
+            Container(
+              color: Colors.purple,
+              width: 100,
+              height: 500,
+            ),
+          ],
+        ),
+
+        floatingActionButton: FloatingActionButton(
+            child: Icon(Icons.camera),
+            onPressed: () {
+              print('pressed');
+              setState(() {
+                count++;
+              });
+            }),
+
+        bottomNavigationBar: BottomNavigationBar(items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.business),
+            label: 'Business',
+            
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.toll_outlined),
+            label: 'Home',
+          ),
+        ]),
+
+        drawer: Drawer(
+          child: Text('Yo!'),
+        ),
+      ),
+    );
+  }
+}
+
+class BusinessScreen extends StatelessWidget {
+  const BusinessScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+    );
+  }
+}
